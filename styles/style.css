@@ -19,6 +19,12 @@ button {
   background-color: #FF9900;
   color: #FFFFFF;
   cursor: pointer;
+  transition: all 0.3s ease-in;
+
+  &:hover {
+    opacity: 0.7;
+    transform: scale(1.2);
+  }
 }
 
 a {
@@ -49,6 +55,14 @@ p {
     gap: 29px;
     color: #2F281E;
     font-size: 14px;
+
+    li {
+      transition: all 0.3s ease-in;
+
+      &:hover {
+        font-weight: 700;
+      }
+    }
   }
 
   .buttons {
@@ -112,7 +126,7 @@ p {
       gap: 3px;
 
       &::before {
-        content: url(images/triangle.svg);
+        content: url(../images/triangle.svg);
       }
     }
   }
@@ -207,7 +221,7 @@ p {
       }
 
       li:before {
-        content: url(images/check_mark.svg);
+        content: url(../images/check_mark.svg);
         background-color: #FF9900;
         min-width: 35px;
         height: 35px;
@@ -241,10 +255,15 @@ p {
       li {
         line-height: 35px;
         font-weight: 400;
+        transition: all 0.1s ease-in;
+
+        &:hover {
+          opacity: 0.5;
+        }
       }
     }
 
-    .content__links2 {
+    .footer__links2 {
       padding-left: 120px;
       padding-right: 80px;
     }
