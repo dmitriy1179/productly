@@ -1,6 +1,7 @@
 body {
   font-family: Poppins, sans-serif;
   margin-block: 15px;
+  box-sizing: border-box;
 }
 
 ul {
@@ -218,9 +219,8 @@ p {
         display: flex;
         line-height: 26px;
         align-items: center;
-      }
 
-      li:before {
+        &::before {
         content: url(../images/check_mark.svg);
         background-color: #FF9900;
         min-width: 35px;
@@ -230,6 +230,7 @@ p {
         justify-content: center;
         align-items: center;
         margin-right: 30px;
+      }
       }
     }
   }
