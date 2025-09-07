@@ -473,6 +473,10 @@ p {
     }
   }
 
+  body:has(:checked) {
+    overflow: hidden;
+  }
+
   .hero {
     justify-content: baseline;
 
