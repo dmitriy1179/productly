@@ -24,7 +24,7 @@ button {
 
   &:hover {
     opacity: 0.7;
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 }
 
@@ -50,6 +50,11 @@ p {
   align-items: center;
   justify-content: space-between;
   padding-top: 35px;
+  position: relative;
+
+  >a {
+    display: flex;
+  }
 
   ul {
     display: flex;
@@ -60,10 +65,14 @@ p {
     li {
       transition: all 0.3s ease-in;
 
-      &:hover {
+      a:hover {
         font-weight: 700;
       }
     }
+  }
+
+  #burger {
+    display: none;
   }
 
   .buttons {
@@ -221,16 +230,16 @@ p {
         align-items: center;
 
         &::before {
-        content: url(../images/check_mark.svg);
-        background-color: #FF9900;
-        min-width: 35px;
-        height: 35px;
-        border-radius: 14px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-right: 30px;
-      }
+          content: url(../images/check_mark.svg);
+          background-color: #FF9900;
+          min-width: 35px;
+          height: 35px;
+          border-radius: 14px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 30px;
+        }
       }
     }
   }
@@ -285,6 +294,205 @@ p {
         font-size: 32px;
         color: #544837;
       }
+    }
+  }
+}
+
+@media (max-width: 1028px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .hero,
+  .professionals,
+  .managers,
+  .marketers {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 50px;
+    width: 100%;
+
+    img {
+      width: 90vw;
+    }
+  }
+
+  .managers {
+    >div {
+      order: -1;
+    }
+  }
+
+  .features {
+    padding-top: 58px;
+
+    button {
+      margin-bottom: 10px;
+    }
+  }
+
+  .marketers {
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 830px) {
+  .header {
+    flex-wrap: wrap;
+
+    nav {
+      order: 1;
+      width: 100%;
+      padding-top: 30px;
+
+      ul {
+        justify-self: center;
+      }
+    }
+  }
+
+  .powers {
+    flex-wrap: wrap;
+    gap: 15px;
+
+    li {
+      max-width: unset !important;
+      width: 48%;
+    }
+  }
+
+  .footer__content {
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly !important;
+    padding-top: 15px;
+
+    .footer__links2 {
+      padding: unset !important;
+    }
+
+    .subscribe {
+      width: 100%;
+
+      input,
+      button {
+        align-self: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  button {
+    padding: 10px 20px !important;
+  }
+
+  .header {
+    .buttons {
+      width: 100%;
+      justify-content: center;
+      padding-top: 15px;
+    }
+
+    nav {
+      position: absolute;
+      left: -200%;
+      transition: .5s;
+      padding-block: 25px;
+      background-color: #FFFFFF;
+      top: 20px;
+      box-shadow: 10px 1px 20px 5px rgb(204, 202, 202);
+      border-top: 1px solid #bdbbbb;
+      border-right: 1px solid #bdbbbb;
+      border-bottom: 1px solid #bdbbbb;
+      border-bottom-right-radius: 10px;
+      border-top-right-radius: 10px;
+      width: calc(100% - 3px);
+
+      ul {
+        flex-direction: column;
+        font-size: 20px;
+      }
+    }
+
+    .burgereBtn {
+      display: flex;
+      position: relative;
+      margin-right: 20px;
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+      align-items: center;
+      z-index: 3;
+
+      span,
+      ::before,
+      ::after {
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 2px;
+        background-color: #2F281E;
+        transition: .5s;
+
+        &::before {
+          content: "";
+          top: -8px;
+        }
+
+        &::after {
+          content: "";
+          top: 8px;
+        }
+      }
+    }
+
+    &:has(:checked) {
+      label>span {
+        rotate: 45deg;
+
+        &::before {
+          top: 0;
+          rotate: -90deg;
+        }
+
+        &::after {
+          top: 0;
+          rotate: 0deg;
+        }
+      }
+
+      nav {
+        translate: 199%;
+      }
+    }
+  }
+
+  .hero {
+    justify-content: baseline;
+
+    h2 {
+      font-size: 40px;
+    }
+  }
+
+  .powers {
+    gap: 30px;
+
+    li {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .subscribe {
+    input {
+      max-width: 280px;
     }
   }
 }
